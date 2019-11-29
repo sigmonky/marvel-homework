@@ -7,21 +7,27 @@ class ComicDetailsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let apiClient = MarvelAPIClient()
-    apiClient.send(GetComic(comicId: 61537)) { response in
-      print("\nGetComic finished:")
-
-      switch response {
-      case .success(let dataContainer):
-        let comic = dataContainer.results.first
-
-        print("  Title: \(comic?.title ?? "Unnamed comic")")
-        print("  Thumbnail: \(comic?.thumbnail?.url.absoluteString ?? "None")")
-        print("description -- \(comic?.description ?? "mystery")")
-        print("\(String(describing: comic?.creators) )")
-        print("\(String(describing: comic?.dates) )")
-      case .failure(let error):
+//    apiClient.send(GetComic(comicId: 61537)) { response in
+//      print("\nGetComic finished:")
+//
+//      switch response {
+//      case .success(let dataContainer):
+//        let comic = dataContainer.results.first
+//
+//        print("  Title: \(comic?.title ?? "Unnamed comic")")
+//        print("  Thumbnail: \(comic?.thumbnail?.url.absoluteString ?? "None")")
+//        print("description -- \(comic?.description ?? "mystery")")
+//        print("\(String(describing: comic?.creators) )")
+//        print("\(String(describing: comic?.dates) )")
+//      case .failure(let error):
+//        print(error)
+//      }
+//    }
+    let comicVM = ComicViewModel()
+    comicVM.getComic(comicId: 61537) { (comicMetaData,thumbNail, error) in
+        print(comicMetaData)
+        print(thumbNail)
         print(error)
-      }
     }
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 600

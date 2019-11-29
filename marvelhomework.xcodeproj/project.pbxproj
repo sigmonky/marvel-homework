@@ -30,6 +30,7 @@
 		D3C27E3123905A5600E49D36 /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E2E23905A5600E49D36 /* md5.swift */; };
 		D3C27E3223905A5600E49D36 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E2F23905A5600E49D36 /* URLQueryItemEncoder.swift */; };
 		D3C27E3423918F7F00E49D36 /* Auteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E3323918F7F00E49D36 /* Auteur.swift */; };
+		D3C27E362391935F00E49D36 /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E352391935F00E49D36 /* ComicViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D3C27E2E23905A5600E49D36 /* md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = md5.swift; path = Utils/md5.swift; sourceTree = "<group>"; };
 		D3C27E2F23905A5600E49D36 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLQueryItemEncoder.swift; path = Utils/URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		D3C27E3323918F7F00E49D36 /* Auteur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auteur.swift; sourceTree = "<group>"; };
+		D3C27E352391935F00E49D36 /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		D2A5F1F71F4A9143005CD714 = {
 			isa = PBXGroup;
 			children = (
+				D3C27E352391935F00E49D36 /* ComicViewModel.swift */,
 				D3C27E3323918F7F00E49D36 /* Auteur.swift */,
 				D3C27E2D23905A5600E49D36 /* HTTPParameter.swift */,
 				D3C27E2E23905A5600E49D36 /* md5.swift */,
@@ -225,6 +228,7 @@
 				D3C27E2A23905A3600E49D36 /* GetComics.swift in Sources */,
 				D3C27E2B23905A3600E49D36 /* GetComic.swift in Sources */,
 				D3C27E2C23905A3600E49D36 /* GetCharacters.swift in Sources */,
+				D3C27E362391935F00E49D36 /* ComicViewModel.swift in Sources */,
 				D3C27E20239059FC00E49D36 /* Comic.swift in Sources */,
 				D3C27E21239059FC00E49D36 /* MarvelError.swift in Sources */,
 				D3C27E22239059FC00E49D36 /* DataContainer.swift in Sources */,
