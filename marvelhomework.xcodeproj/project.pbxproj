@@ -15,7 +15,6 @@
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
 		D3322BDE238F30BA00782EF8 /* MainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3322BDD238F30BA00782EF8 /* MainInfoCell.swift */; };
 		D3322BE0238F30D200782EF8 /* ContributorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3322BDF238F30D200782EF8 /* ContributorCell.swift */; };
-		D3C27E0F239057EC00E49D36 /* MarvelAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E0C239057EC00E49D36 /* MarvelAPIClient.swift */; };
 		D3C27E20239059FC00E49D36 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E19239059FB00E49D36 /* Comic.swift */; };
 		D3C27E21239059FC00E49D36 /* MarvelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E1A239059FB00E49D36 /* MarvelError.swift */; };
 		D3C27E22239059FC00E49D36 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E1B239059FC00E49D36 /* DataContainer.swift */; };
@@ -31,6 +30,7 @@
 		D3C27E3223905A5600E49D36 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E2F23905A5600E49D36 /* URLQueryItemEncoder.swift */; };
 		D3C27E362391935F00E49D36 /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E352391935F00E49D36 /* ComicViewModel.swift */; };
 		D3C27E3C239198EC00E49D36 /* Auteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E082390563300E49D36 /* Auteur.swift */; };
+		D3C27E4523919C9500E49D36 /* MarvelAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E4423919C9500E49D36 /* MarvelAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,6 @@
 		D3322BDD238F30BA00782EF8 /* MainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoCell.swift; sourceTree = "<group>"; };
 		D3322BDF238F30D200782EF8 /* ContributorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorCell.swift; sourceTree = "<group>"; };
 		D3C27E082390563300E49D36 /* Auteur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auteur.swift; sourceTree = "<group>"; };
-		D3C27E0C239057EC00E49D36 /* MarvelAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarvelAPIClient.swift; path = Services/Network/MarvelAPIClient.swift; sourceTree = SOURCE_ROOT; };
 		D3C27E19239059FB00E49D36 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		D3C27E1A239059FB00E49D36 /* MarvelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelError.swift; sourceTree = "<group>"; };
 		D3C27E1B239059FC00E49D36 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		D3C27E2E23905A5600E49D36 /* md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = md5.swift; sourceTree = "<group>"; };
 		D3C27E2F23905A5600E49D36 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		D3C27E352391935F00E49D36 /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewModel.swift; sourceTree = "<group>"; };
+		D3C27E4423919C9500E49D36 /* MarvelAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 		D3C27E3E2391991200E49D36 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D3C27E0C239057EC00E49D36 /* MarvelAPIClient.swift */,
+				D3C27E4423919C9500E49D36 /* MarvelAPIClient.swift */,
 				D3C27E402391996600E49D36 /* Network Utils */,
 				D3C27E3F2391993F00E49D36 /* Network Requests */,
 			);
@@ -269,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C27E3023905A5600E49D36 /* HTTPParameter.swift in Sources */,
+				D3C27E4523919C9500E49D36 /* MarvelAPIClient.swift in Sources */,
 				D3C27E3123905A5600E49D36 /* md5.swift in Sources */,
 				D3C27E3223905A5600E49D36 /* URLQueryItemEncoder.swift in Sources */,
 				D3C27E2A23905A3600E49D36 /* GetComics.swift in Sources */,
@@ -286,7 +287,6 @@
 				17AEBADA214F62A7005EDCDF /* ComicDetailsViewController.swift in Sources */,
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
 				D3322BE0238F30D200782EF8 /* ContributorCell.swift in Sources */,
-				D3C27E0F239057EC00E49D36 /* MarvelAPIClient.swift in Sources */,
 				D3322BDE238F30BA00782EF8 /* MainInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Marvel Comic/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fakeancient.marvelhomwork;
@@ -439,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Marvel Comic/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fakeancient.marvelhomwork;
