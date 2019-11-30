@@ -3,4 +3,86 @@
    uuid = "9A2A22A4-8228-4D73-81B0-9AD2DB7E9CC3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9ACEC056-521B-4735-BAB7-960EED3372F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "View Layer/ViewControllers/ComicViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "getComic(comicId:onReturnData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "553D7958-15AB-4F18-A961-609906ADF76B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "View Layer/ViewControllers/ComicViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "getComic(comicId:onReturnData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "553D7958-15AB-4F18-A961-609906ADF76B - ed79636ba49d2653"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Marvel_Homework.DataContainer&lt;Swift.Array&lt;Marvel_Homework.Comic&gt;&gt;, Swift.Error&gt;) -&gt; () in Marvel_Homework.ComicViewModel.getComic(comicId: Swift.Int, onReturnData: (Swift.Optional&lt;Marvel_Homework.ComicMetaData&gt;, Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Marvel_Homework.CustomError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Marvel Homework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/randyweinstein/Documents/marvel-homework/View%20Layer/ViewControllers/ComicViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "3336">
+               </Location>
+               <Location
+                  uuid = "553D7958-15AB-4F18-A961-609906ADF76B - 427935b7bcff40f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Marvel_Homework.ComicBookCreator) -&gt; Swift.String in closure #1 (Swift.Result&lt;Marvel_Homework.DataContainer&lt;Swift.Array&lt;Marvel_Homework.Comic&gt;&gt;, Swift.Error&gt;) -&gt; () in Marvel_Homework.ComicViewModel.getComic(comicId: Swift.Int, onReturnData: (Swift.Optional&lt;Marvel_Homework.ComicMetaData&gt;, Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Marvel_Homework.CustomError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Marvel Homework"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/randyweinstein/Documents/marvel-homework/View%20Layer/ViewControllers/ComicViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1B53629-B51F-4DD7-8D70-AAEED6E99B8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "View Layer/ViewControllers/ComicViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "getComic(comicId:onReturnData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

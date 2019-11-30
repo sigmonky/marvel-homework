@@ -17,39 +17,39 @@ public class MarvelAPIClient {
 
   public func send<T: APIRequest>(_ request: T,  passingURLString: Bool = false, completion: @escaping ResultCallback<DataContainer<T.Response>>) {
 
-        var endpoint: URL
-        endpoint = self.endpoint(for: request)
-		
-		let task = session.dataTask(with: URLRequest(url: endpoint)) { data, response, error in
-			if let data = data {
-        print(data)
-				do {
-					let marvelResponse = try JSONDecoder().decode(MarvelResponse<T.Response>.self, from: data)
-					if let dataContainer = marvelResponse.data {
-						completion(.success(dataContainer))
-					} else if let message = marvelResponse.message {
-						completion(.failure(MarvelError.server(message: message)))
-					} else {
-						completion(.failure(MarvelError.decoding))
-					}
-				} catch {
-					completion(.failure(error))
-				}
-			} else if let error = error {
-				completion(.failure(error))
-			}
-		}
-		task.resume()
+    var endpoint: URL
+    endpoint = self.endpoint(for: request)
+
+    let task = session.dataTask(with: URLRequest(url: endpoint)) { data, response, error in
+    if let data = data {
+      do {
+        let marvelResponse = try JSONDecoder().decode(MarvelResponse<T.Response>.self, from: data)
+        if let dataContainer = marvelResponse.data {
+          completion(.success(dataContainer))
+        } else if let message = marvelResponse.message {
+          completion(.failure(MarvelError.server(message: message)))
+        } else {
+          completion(.failure(MarvelError.decoding))
+        }
+      } catch {
+        completion(.failure(error))
+      }
+    } else if let error = error {
+      completion(.failure(error))
+    }
+    }
+    task.resume()
 	}
 
     private func endpoint<T: APIRequest>(for request: T) -> URL {
-        guard let baseEndpointUrl = baseEndpointUrl else {
-            fatalError("URL malformed")
-        }
-        
-        guard let baseUrl = URL(string: request.resourceName, relativeTo: baseEndpointUrl) else {
-            fatalError("Bad resourceName: \(request.resourceName)")
-        }
+      
+    guard let baseEndpointUrl = baseEndpointUrl else {
+        fatalError("URL malformed")
+    }
+    
+    guard let baseUrl = URL(string: request.resourceName, relativeTo: baseEndpointUrl) else {
+        fatalError("Bad resourceName: \(request.resourceName)")
+    }
         
 
 		var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)!
@@ -74,7 +74,6 @@ public class MarvelAPIClient {
 
 		components.queryItems = commonQueryItems + customQueryItems
 
-		// Construct the final URL with all the previous data
 		return components.url!
 	}
     

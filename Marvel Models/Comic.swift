@@ -23,22 +23,3 @@ public struct Comic: Decodable {
   }
   
 }
-
-
-
-
-
-/*
- CreatorList {
- available (int, optional): The number of total available creators in this list. Will always be greater than or equal to the "returned" value.,
- returned (int, optional): The number of creators returned in this collection (up to 20).,
- collectionURI (string, optional): The path to the full list of creators in this collection.,
- items (Array[CreatorSummary], optional): The list of returned creators in this collection.
- }
- 
- CreatorSummary {
- resourceURI (string, optional): The path to the individual creator resource.,
- name (string, optional): The full name of the creator.,
- role (string, optional): The role of the creator in the parent entity.
- }
- */
