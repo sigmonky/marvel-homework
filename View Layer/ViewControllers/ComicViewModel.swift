@@ -1,10 +1,22 @@
 import Foundation
 import UIKit
 
+protocol ComicDisplayCell {
+  var cellType: DisplayCellType { get set }
+}
+
+enum DisplayCellType {
+  case mainCell
+  case contributorCell
+  case publishDateCell
+}
+
 enum DesignDomain {
     case cover
     case interior
 }
+
+
 
 struct ComicBookCreator {
     var name: String
@@ -23,17 +35,6 @@ struct ComicMetaData {
 struct CustomError {
     var errorDescription: String
 }
-
-enum DisplayCellType {
-  case mainCell
-  case contributorCell
-  case publishDateCell
-}
-
-protocol ComicDisplayCell {
-  var cellType: DisplayCellType { get set }
-}
-
 
 
 struct MainDisplayCell: ComicDisplayCell {
@@ -63,9 +64,12 @@ struct ContributeDisplayCell: ComicDisplayCell {
 
 class ComicViewModel {
     
-  let apiClient = MarvelAPIClient()
+  var apiClient: NetworkServices
   var displayCells = [ComicDisplayCell]()
-    
+  
+  init(networkServices: NetworkServices) {
+    apiClient = networkServices
+  }
   private func composeComicMetaData(comic: Comic) -> ComicMetaData {
     
         let title = comic.title ?? "Unnamed comic"
@@ -149,7 +153,7 @@ class ComicViewModel {
                          return
                      }
 
-                     self.apiClient.fetchImageResult(from:thumbnailURL) { [unowned self] result in
+                     self.apiClient.fetchImage(from:thumbnailURL) { [unowned self] result in
 
                          switch result {
                          case .success(let imageData):

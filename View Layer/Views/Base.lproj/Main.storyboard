@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-Uo-U44" userLabel="Comic Cover">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avengers.jps" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-Uo-U44" userLabel="Comic Cover">
                                                     <rect key="frame" x="362" y="15" width="300" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="HKe-8R-637"/>
@@ -142,4 +142,7 @@
             <point key="canvasLocation" x="2036" y="-215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avengers.jps" width="553" height="850"/>
+    </resources>
 </document>

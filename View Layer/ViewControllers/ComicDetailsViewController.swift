@@ -3,7 +3,7 @@ import UIKit
 class ComicDetailsViewController: UIViewController {
   let auteurs = Auteur.auteursFromBundle()
   @IBOutlet weak var tableView: UITableView!
-  var comicVM = ComicViewModel()
+  var comicVM = ComicViewModel(networkServices: MarvelAPIClient())
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -77,32 +77,6 @@ extension ComicDetailsViewController: UITableViewDataSource {
     case .publishDateCell:
       print("zoinkele")
     }
-    
-    //switch indexPath.row {
-//      case 0:
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainInfoCell
-//        let auteur = auteurs[indexPath.row]
-//
-//        cell.comicInfo.text = auteur.bio
-//        cell.thumbnail.image = UIImage(named: auteur.image)
-//        cell.title.text = auteur.name
-//        cell.selectionStyle = .none
-//        return cell
-//      case 1:
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Contributors", for: indexPath) as! ContributorCell
-//        cell.contributorTitle.text = "Cover"
-//        cell.contributors.text = "Colorist: Steve Buccellato\nEditor: Tom Defalco\nEditor: Bob Harras\nInker: Josef Rubinstein\nLetterer: Joe Rosen\nPenciller: Guang Yap\nWriter: Louise Simonson"
-//        cell.selectionStyle = .none
-//        return cell
-//      case 2:
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Contributors", for: indexPath) as! ContributorCell
-//        cell.contributorTitle.text = "Interior"
-//        cell.contributors.text = "Penciller: Rob Liefield"
-//        cell.selectionStyle = .none
-//        return cell
-//      default:
-//        return UITableViewCell()
-//      }
     return UITableViewCell()
     
   }

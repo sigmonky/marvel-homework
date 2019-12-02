@@ -2,7 +2,7 @@ import Foundation
 
 public typealias ResultCallback<Value> = (Result<Value, Error>) -> ()
 
-public class MarvelAPIClient {
+public class MarvelAPIClient: NetworkServices {
     private let baseEndpointUrl: URL?
 	private let session = URLSession(configuration: .default)
 
@@ -15,7 +15,7 @@ public class MarvelAPIClient {
         self.baseEndpointUrl = URL(string: "https://gateway.marvel.com:443/v1/public/")!
 	}
 
-  public func send<T: APIRequest>(_ request: T,  passingURLString: Bool = false, completion: @escaping ResultCallback<DataContainer<T.Response>>) {
+  public func send<T: APIRequest>(_ request: T, completion: @escaping ResultCallback<DataContainer<T.Response>>) {
 
     var endpoint: URL
     endpoint = self.endpoint(for: request)
@@ -78,7 +78,7 @@ public class MarvelAPIClient {
 	}
     
     
-    public func fetchImageResult(from urlString: String, completionHandler: @escaping (Result<Data?, Error>) -> ()) {
+    public func fetchImage(from urlString: String, completionHandler: @escaping (Result<Data?, Error>) -> ()) {
 
         let url = URL(string: urlString)
             

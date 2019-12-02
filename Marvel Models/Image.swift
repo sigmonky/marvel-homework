@@ -2,7 +2,7 @@ import Foundation
 
 /// Common object for images coming from the Marvel API
 /// Shows how to fully conform to Decodable
-public struct Image: Decodable {
+public struct Image: Codable {
 	/// Server sends the remote URL splits in two: the path and the extension
 	enum ImageKeys: String, CodingKey {
 		case path = "path"
