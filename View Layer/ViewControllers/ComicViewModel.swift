@@ -96,20 +96,20 @@ class ComicViewModel {
         
     }
     
-    func getComic(comicId: Int, onReturnData: @escaping (_ metaData: ComicMetaData?, _ thumbNail: UIImage?, _ error: CustomError?)->()) {
+  func getComic(comicId: Int, onReturnData: @escaping ( _ onReturnData: ComicMetaData?, _ error: CustomError?)->(),onReturnImage: @escaping ( _ thumbNail: UIImage?, _ error: CustomError?) ->() ) {
         
         let clientReturnClosure = onReturnData
+        let imageReturnClosure = onReturnImage
         
         apiClient.send(GetComic(comicId: comicId)) {[unowned self] response in
             var comicMetaData: ComicMetaData?
-            var thumbNailImg: UIImage?
             
             switch response {
                 case .success(let dataContainer):
                     
                     guard let comic = dataContainer.results.first else {
                         let errorMessage = CustomError(errorDescription: "Comic book info not available")
-                        clientReturnClosure(nil, nil, errorMessage)
+                        clientReturnClosure(nil, errorMessage)
                         return
                     }
                     
@@ -117,6 +117,8 @@ class ComicViewModel {
                     var mainCell = MainDisplayCell()
                     mainCell.title = comicMetaData?.title ?? "Unnamed comic"
                     mainCell.description = comicMetaData?.description ?? "No description available"
+                    self.displayCells.append(mainCell)
+                   
                     
                     var coverContributors = ContributeDisplayCell()
                     coverContributors.title = "Cover"
@@ -126,9 +128,10 @@ class ComicViewModel {
                       }
                       coverContributors.contributors = coverList.joined(separator:"\n")
                     }
+                    self.displayCells.append(coverContributors)
                     
                     var interiorContributors = ContributeDisplayCell()
-                    coverContributors.title = "Interior"
+                    interiorContributors.title = "Interior"
                     
                     if let interiorList = comicMetaData?.creators.filter({ $0.domain == .interior}) {
                       let interiorList = interiorList.map {
@@ -137,31 +140,40 @@ class ComicViewModel {
                       interiorContributors.contributors = interiorList.joined(separator:"\n")
                     }
                     
-                    guard let thumbnailURL = comic.thumbnail?.url.absoluteString  else {
-                        let errorMessage = CustomError(errorDescription: "No thumbnail image URL provided")
-                        clientReturnClosure(comicMetaData, nil, errorMessage)
-                        return
-                    }
+                    self.displayCells.append(interiorContributors)
+                    clientReturnClosure(nil, nil)
                     
-                    self.apiClient.fetchImageResult(from:thumbnailURL) { result in
-                        
-                        switch result {
-                        case .success(let imageData):
-                            if imageData != nil,
-                                let img = UIImage(data: imageData!) {
-                              mainCell.thumbNail = img
-                              self.displayCells.append(mainCell)
-                            }
-                            clientReturnClosure(comicMetaData,thumbNailImg,nil)
-                        case .failure(let error):
-                            let customError = CustomError(errorDescription: error.localizedDescription)
-                            clientReturnClosure(comicMetaData,nil,customError)
-                        }
-                    }
+                    guard let thumbnailURL = comic.thumbnail?.url.absoluteString  else {
+                         let errorMessage = CustomError(errorDescription: "No thumbnail image URL provided")
+                         imageReturnClosure(nil, errorMessage)
+                         return
+                     }
+
+                     self.apiClient.fetchImageResult(from:thumbnailURL) { [unowned self] result in
+
+                         switch result {
+                         case .success(let imageData):
+                             if imageData != nil,
+                                 let img = UIImage(data: imageData!) {
+                              
+                              print(self.displayCells)
+                              var updatedMainInfo = self.displayCells[0] as! MainDisplayCell
+                              updatedMainInfo.thumbNail = img
+                              self.displayCells[0] = updatedMainInfo
+                               imageReturnClosure(nil,nil)
+                             }
+              
+                             
+                         case .failure(let error):
+                             let customError = CustomError(errorDescription: error.localizedDescription)
+                             imageReturnClosure(nil,customError)
+                         }
+                     }
+                    
                    
                 case .failure(let error):
                     let errorMessage = CustomError(errorDescription: error.localizedDescription)
-                    clientReturnClosure(nil,nil,errorMessage)
+                    clientReturnClosure(nil,errorMessage)
             }
             
         }

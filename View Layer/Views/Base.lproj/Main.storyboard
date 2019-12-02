@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" rowHeight="450" id="yCM-yb-ZSv" customClass="MainInfoCell" customModule="Marvel_Homework" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" rowHeight="450" id="yCM-yb-ZSv" customClass="MainInfoCell" customModule="Marvel_Homework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1024" height="450"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yCM-yb-ZSv" id="rji-HH-2VL">
@@ -78,11 +78,11 @@
                                             <outlet property="title" destination="GWh-sA-kFl" id="RgU-EQ-RQ4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Contributors" id="buk-NJ-4QH" customClass="ContributorCell" customModule="Marvel_Homework" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="478" width="1024" height="177"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Contributors" id="buk-NJ-4QH" customClass="ContributorCell" customModule="Marvel_Homework" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="478" width="1024" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="buk-NJ-4QH" id="lHb-tI-aYp">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="177"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6o-27-t7w">
@@ -95,10 +95,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrt-fT-jNa" userLabel="Contributors">
-                                                    <rect key="frame" x="20" y="41" width="200" height="130.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="6Og-j7-Pb1"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="20" y="41" width="1040" height="20.5"/>
                                                     <string key="text">sdlkfjsldkfjdlkfjdslkfjsdlkfjldskfjlkdsfjlsdkjlskfdjlsdkfjlksdfjldskfjlsdfkjldsfkjldsfkjlfdskjflkjflkjflkdjflkjdfsljsdfljdflkjfkfjlfjlfjljfslfjlkjlfjdlfjlkfjsdljflfj</string>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,7 +103,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hrt-fT-jNa" secondAttribute="trailing" constant="20" symbolic="YES" id="H2z-EM-O0j"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="hrt-fT-jNa" secondAttribute="trailing" constant="16" id="H2z-EM-O0j"/>
                                                 <constraint firstItem="hrt-fT-jNa" firstAttribute="leading" secondItem="lHb-tI-aYp" secondAttribute="leadingMargin" constant="5" id="OHC-Qn-Dmh"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="F6o-27-t7w" secondAttribute="trailing" id="UbI-8d-5C5"/>
                                                 <constraint firstItem="hrt-fT-jNa" firstAttribute="top" secondItem="F6o-27-t7w" secondAttribute="bottom" id="j7V-eT-X8P"/>
