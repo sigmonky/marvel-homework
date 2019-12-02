@@ -75,7 +75,7 @@ extension ComicDetailsViewController: UITableViewDataSource {
       cell.contributors.text = contributorCellData.contributors
       return cell
     case .publishDateCell:
-      print("zoinkele")
+      print("just date here")
     }
     return UITableViewCell()
     

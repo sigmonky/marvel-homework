@@ -33,7 +33,6 @@
 		D3C27E3123905A5600E49D36 /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E2E23905A5600E49D36 /* md5.swift */; };
 		D3C27E3223905A5600E49D36 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E2F23905A5600E49D36 /* URLQueryItemEncoder.swift */; };
 		D3C27E362391935F00E49D36 /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E352391935F00E49D36 /* ComicViewModel.swift */; };
-		D3C27E3C239198EC00E49D36 /* Auteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E082390563300E49D36 /* Auteur.swift */; };
 		D3C27E4523919C9500E49D36 /* MarvelAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C27E4423919C9500E49D36 /* MarvelAPIClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		D34BCA2323957EF200FB52FA /* StubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAPI.swift; sourceTree = "<group>"; };
 		D34BCA2623958A1B00FB52FA /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		D39EC7B7239578C8007D8BD8 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
-		D3C27E082390563300E49D36 /* Auteur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auteur.swift; sourceTree = "<group>"; };
 		D3C27E19239059FB00E49D36 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		D3C27E1A239059FB00E49D36 /* MarvelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelError.swift; sourceTree = "<group>"; };
 		D3C27E1B239059FC00E49D36 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 		D3C27E3B239198B300E49D36 /* Marvel Models */ = {
 			isa = PBXGroup;
 			children = (
-				D3C27E082390563300E49D36 /* Auteur.swift */,
 				D3C27E19239059FB00E49D36 /* Comic.swift */,
 				D3C27E1F239059FC00E49D36 /* ComicCharacter.swift */,
 				D3C27E1B239059FC00E49D36 /* DataContainer.swift */,
@@ -297,7 +294,6 @@
 				D34BCA2423957EF200FB52FA /* StubAPI.swift in Sources */,
 				D3C27E2C23905A3600E49D36 /* GetCharacters.swift in Sources */,
 				D3C27E362391935F00E49D36 /* ComicViewModel.swift in Sources */,
-				D3C27E3C239198EC00E49D36 /* Auteur.swift in Sources */,
 				D3C27E20239059FC00E49D36 /* Comic.swift in Sources */,
 				D34BCA2723958A1B00FB52FA /* LocalStore.swift in Sources */,
 				D3C27E21239059FC00E49D36 /* MarvelError.swift in Sources */,
