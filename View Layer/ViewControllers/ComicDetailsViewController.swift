@@ -1,7 +1,6 @@
 import UIKit
 
 class ComicDetailsViewController: UIViewController {
-  let auteurs = Auteur.auteursFromBundle()
   @IBOutlet weak var tableView: UITableView!
   var comicVM = ComicViewModel(networkServices: MarvelAPIClient())
   
