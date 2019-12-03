@@ -3,8 +3,8 @@
 import Foundation
 
 struct APIConstants {
-  static let publicKey =  "24dfba65b5783b7eca68f72e2aedc9f2"
-  static let privateKey = "01dfce1538b10cb534e958bf9b475812d0adc3f5"
+  static let publicKey =  "putyourshere"
+  static let privateKey = "putyourshere"
   static let baseEndPoinUrl = URL(string: "https://gateway.marvel.com:443/v1/public/")!
   static let basePointErrorMsg = "Could not resolve API endpoint"
 }
