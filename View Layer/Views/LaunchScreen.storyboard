@@ -28,12 +28,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2019-11-28 at 1.25.06 PM" translatesAutoresizingMaskIntoConstraints="NO" id="2IN-cD-qBo">
+                                <rect key="frame" x="67" y="46" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2IN-cD-qBo" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="67" id="BBu-sZ-p66"/>
                             <constraint firstItem="KtM-fS-smT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FgZ-gO-giN"/>
+                            <constraint firstItem="KtM-fS-smT" firstAttribute="top" secondItem="2IN-cD-qBo" secondAttribute="bottom" constant="41" id="N2E-Yp-U1f"/>
                             <constraint firstItem="iLE-Dv-wsP" firstAttribute="top" secondItem="KtM-fS-smT" secondAttribute="bottom" constant="50" id="fn7-mZ-XUM"/>
                             <constraint firstItem="KtM-fS-smT" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="215" id="jbI-lc-FcD"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="2IN-cD-qBo" secondAttribute="trailing" constant="68" id="qU4-nv-Zzb"/>
+                            <constraint firstItem="2IN-cD-qBo" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="46" id="wvS-Rb-qR7"/>
                             <constraint firstItem="iLE-Dv-wsP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yUB-6r-a3b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
@@ -44,4 +51,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Screen Shot 2019-11-28 at 1.25.06 PM" width="268" height="126"/>
+    </resources>
 </document>

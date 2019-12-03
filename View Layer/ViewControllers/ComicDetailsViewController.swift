@@ -2,8 +2,8 @@ import UIKit
 
 class ComicDetailsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  var comicID = 61537
   
-
   var comicVM = ComicViewModel(networkServices: MarvelAPIClient())
   
   override func viewDidLoad() {
@@ -19,9 +19,10 @@ class ComicDetailsViewController: UIViewController {
     let returnDataClosure: (ComicMetaData?, CustomError?) -> () = { (comicMetaData, error) in
       DispatchQueue.main.async {
         if error != nil {
-          let alert = UIAlertController(title: "Comic Currently Unvailable", message: "We are unable to download the comic information you requested. Please try again later.", preferredStyle: .alert)
+          let alert = UIAlertController(title: ComicDetails.errorAlertTitle,
+              message: ComicDetails.errorAlertMsg , preferredStyle: .alert)
 
-          alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+          alert.addAction(UIAlertAction(title: ComicDetails.errorAlertBtnLbl, style: .default, handler: nil))
           self.present(alert, animated: true)
         } else {
           self.tableView.reloadData()
@@ -34,12 +35,11 @@ class ComicDetailsViewController: UIViewController {
        if error != nil {
          print(error ?? "unidentified error message")
        } else {
-         //self.tableView.reloadData()
         self.tableView.reloadRows(at: [IndexPath(item:0, section:0)], with: .none)
        }
       }}
     
-    comicVM.getComic(comicId: 61537, onReturnData: returnDataClosure
+    comicVM.getComic(comicId: comicID, onReturnData: returnDataClosure
    , onReturnImage: returnImageClosure)
   }
   
@@ -63,23 +63,29 @@ extension ComicDetailsViewController: UITableViewDataSource {
     
     switch cellData.cellType {
     case .mainCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainInfoCell
+      
+      let cell = tableView.dequeueReusableCell(withIdentifier: ComicDetails.mainCellId, for: indexPath) as! MainInfoCell
       let mainCellData = cellData as! MainDisplayCell
       cell.comicInfo.text = mainCellData.description
       cell.title.text = mainCellData.title
       if let thumbNail = mainCellData.thumbNail {
-        cell.thumbnail.image = thumbNail
+        cell.thumbnail.fadeOut(completion: {
+            (finished: Bool) -> Void in
+          cell.thumbnail.image = thumbNail
+          cell.thumbnail.fadeIn()
+        })
       }
       return cell
       
     case .contributorCell:
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Contributors", for: indexPath) as! ContributorCell
+      
+      let cell = tableView.dequeueReusableCell(withIdentifier: ComicDetails.contributorCellId, for: indexPath) as! ContributorCell
       let contributorCellData = cellData as! ContributeDisplayCell
       cell.contributorTitle.text = contributorCellData.title
       cell.contributors.text = contributorCellData.contributors
       return cell
     case .publishDateCell:
-      print("just date here")
+      print("tbd")
     }
     return UITableViewCell()
     

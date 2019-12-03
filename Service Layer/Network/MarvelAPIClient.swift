@@ -8,18 +8,17 @@ public class MarvelAPIClient: NetworkServices {
 
 	private let publicKey: String
 	private let privateKey: String
-
+  
 	public init() {
-        self.publicKey = "24dfba65b5783b7eca68f72e2aedc9f2"
-        self.privateKey = "01dfce1538b10cb534e958bf9b475812d0adc3f5"
-        self.baseEndpointUrl = URL(string: "https://gateway.marvel.com:443/v1/public/")!
+    self.publicKey = APIConstants.publicKey
+    self.privateKey = APIConstants.privateKey
+    self.baseEndpointUrl = APIConstants.baseEndPoinUrl
 	}
 
   public func send<T: APIRequest>(_ request: T, completion: @escaping ResultCallback<DataContainer<T.Response>>) {
 
     guard let endpoint = self.endpoint(for: request) else {
-      print("could not resolve endpoint")
-      completion(.failure(MarvelError.server(message: "Could not resolve API endpoint")))
+      completion(.failure(MarvelError.server(message: APIConstants.basePointErrorMsg)))
       return
     }
 

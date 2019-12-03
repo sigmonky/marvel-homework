@@ -1,7 +1,5 @@
 import Foundation
 
-// Utility type so that we can decode any type of HTTP parameter
-// Useful when we have mixed types in a HTTP request
 enum HTTPParameter: CustomStringConvertible, Decodable {
 	case string(String)
 	case bool(Bool)
