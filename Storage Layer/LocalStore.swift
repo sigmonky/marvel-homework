@@ -49,13 +49,26 @@ class LocalStore {
   
   func storeComicMetaData(comic: Comic) {
     let defaults = UserDefaults.standard
+    var storedComic = ComicStore(id: comic.id, title: comic.title, issueNumber: comic.issueNumber, description: comic.description, pageCount: comic.pageCount, creators: comic.creators, dates: comic.dates)
     
-    // Use PropertyListEncoder to convert Player into Data / NSData
-    defaults.set(try? PropertyListEncoder().encode(comic), forKey: "comic")
+    guard let encodedComic = try? PropertyListEncoder().encode(comic) else {
+      return
+    }
+    defaults.set(encodedComic, forKey: String(comic.id))
   }
   
-  func retrieveComicMetaData(comicId: Int) -> Comic? {
-    return nil
+  func retrieveComicMetaData(comicId: Int) -> ComicStore? {
+    let defaults = UserDefaults.standard
+    guard let comicData = defaults.object(forKey: String(comicId)) as? Data else {
+        return nil
+    }
+    do {
+      let comicData = try PropertyListDecoder().decode(ComicStore.self, from: comicData)
+      return comicData
+    } catch {
+      print(error)
+      return nil
+    } 
   }
 
   private func filePath(forKey key: String) -> URL? {
