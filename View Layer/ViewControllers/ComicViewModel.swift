@@ -76,7 +76,7 @@ class ComicViewModel {
       let clientReturnClosure = onReturnData
       let imageReturnClosure = onReturnImage
     
-      let localStore = LocalStore()
+    let localStore = LocalStore()
     if let localComicData = localStore.retrieveComicMetaData(comicId: comicId) {
       var comicMetaData: ComicMetaData?
       comicMetaData = self.composeComicMetaData(comic: localComicData)
@@ -86,7 +86,8 @@ class ComicViewModel {
       if let thumbNail = localStore.retrieveImage(forKey: String(comicId), inStorageType: .fileSystem)  {
         mainCell.thumbNail = thumbNail
       } else {
-        print("could not retrieve local store")
+        print("could not retrieve local image")
+        localStore.removeComicMetaData(comicID: comicId)
       }
       self.displayCells.append(mainCell)
       var coverContributors = ContributeDisplayCell()
@@ -223,10 +224,10 @@ class ComicViewModel {
   }
   
 //  private func composeComicMetaData(comic: Comic) -> ComicMetaData {
-//    
+//
 //        let title = comic.title ?? "Unnamed comic"
 //        let description = comic.description ?? "No description available"
-//  
+//
 //        var creatorList = [ComicBookCreator]()
 //        if let creators = comic.creators {
 //            for creator in creators.items {
@@ -241,15 +242,15 @@ class ComicViewModel {
 //                    roleText = role
 //                    domain = .interior
 //                }
-//                
+//
 //                let creator = ComicBookCreator(name: name, role: roleText, domain: domain)
 //                creatorList.append(creator)
-//                
+//
 //            }
 //        }
-//            
+//
 //        return ComicMetaData(title: title, description: description, creators: creatorList)
-//        
+//
 //    }
     
   

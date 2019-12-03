@@ -2,6 +2,8 @@ import UIKit
 
 class ComicDetailsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  
+
   var comicVM = ComicViewModel(networkServices: MarvelAPIClient())
   
   override func viewDidLoad() {
@@ -17,7 +19,10 @@ class ComicDetailsViewController: UIViewController {
     let returnDataClosure: (ComicMetaData?, CustomError?) -> () = { (comicMetaData, error) in
       DispatchQueue.main.async {
         if error != nil {
-          print(error!.errorDescription)
+          let alert = UIAlertController(title: "Comic Currently Unvailable", message: "We are unable to download the comic information you requested. Please try again later.", preferredStyle: .alert)
+
+          alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+          self.present(alert, animated: true)
         } else {
           self.tableView.reloadData()
         }
@@ -27,7 +32,7 @@ class ComicDetailsViewController: UIViewController {
     let returnImageClosure:(UIImage?, CustomError?) -> () = {(image,error) in
       DispatchQueue.main.async {
        if error != nil {
-         print(error!.errorDescription)
+         print(error ?? "unidentified error message")
        } else {
          //self.tableView.reloadData()
         self.tableView.reloadRows(at: [IndexPath(item:0, section:0)], with: .none)

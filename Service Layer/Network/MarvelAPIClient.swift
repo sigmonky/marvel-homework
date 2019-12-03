@@ -17,8 +17,11 @@ public class MarvelAPIClient: NetworkServices {
 
   public func send<T: APIRequest>(_ request: T, completion: @escaping ResultCallback<DataContainer<T.Response>>) {
 
-    var endpoint: URL
-    endpoint = self.endpoint(for: request)
+    guard let endpoint = self.endpoint(for: request) else {
+      print("could not resolve endpoint")
+      completion(.failure(MarvelError.server(message: "Could not resolve API endpoint")))
+      return
+    }
 
     let task = session.dataTask(with: URLRequest(url: endpoint)) { data, response, error in
     if let data = data {
@@ -41,14 +44,14 @@ public class MarvelAPIClient: NetworkServices {
     task.resume()
 	}
 
-    private func endpoint<T: APIRequest>(for request: T) -> URL {
+    private func endpoint<T: APIRequest>(for request: T) -> URL? {
       
     guard let baseEndpointUrl = baseEndpointUrl else {
-        fatalError("URL malformed")
+        return nil
     }
     
     guard let baseUrl = URL(string: request.resourceName, relativeTo: baseEndpointUrl) else {
-        fatalError("Bad resourceName: \(request.resourceName)")
+        return nil
     }
         
 
@@ -69,12 +72,12 @@ public class MarvelAPIClient: NetworkServices {
 		do {
 			customQueryItems = try URLQueryItemEncoder.encode(request)
 		} catch {
-			fatalError("Wrong parameters: \(error)")
+			return nil
 		}
 
 		components.queryItems = commonQueryItems + customQueryItems
 
-		return components.url!
+		return components.url
 	}
     
     

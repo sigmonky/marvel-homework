@@ -49,12 +49,17 @@ class LocalStore {
   
   func storeComicMetaData(comic: Comic) {
     let defaults = UserDefaults.standard
-    var storedComic = ComicStore(id: comic.id, title: comic.title, issueNumber: comic.issueNumber, description: comic.description, pageCount: comic.pageCount, creators: comic.creators, dates: comic.dates)
+    let storedComic = ComicStore(id: comic.id, title: comic.title, issueNumber: comic.issueNumber, description: comic.description, pageCount: comic.pageCount, creators: comic.creators, dates: comic.dates)
     
-    guard let encodedComic = try? PropertyListEncoder().encode(comic) else {
+    guard let encodedComic = try? PropertyListEncoder().encode(storedComic) else {
       return
     }
     defaults.set(encodedComic, forKey: String(comic.id))
+  }
+  
+  func removeComicMetaData(comicID: Int) {
+    let defaults = UserDefaults.standard
+    defaults.removeObject(forKey: String(comicID))
   }
   
   func retrieveComicMetaData(comicId: Int) -> ComicStore? {
