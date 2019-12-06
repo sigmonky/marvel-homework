@@ -2,6 +2,12 @@ import Foundation
 
 public typealias ResultCallback<Value> = (Result<Value, Error>) -> ()
 
+struct MarvelAPI {
+    static let publicKey = "24dfba65b5783b7eca68f72e2aedc9f2"
+    static let privateKey = "01dfce1538b10cb534e958bf9b475812d0adc3f5"
+    static let endPointURL = URL(string: "https://gateway.marvel.com:443/v1/public/")!
+}
+
 public class MarvelAPIClient {
     private let baseEndpointUrl: URL?
 	private let session = URLSession(configuration: .default)
@@ -18,11 +24,9 @@ public class MarvelAPIClient {
   public func send<T: APIRequest>(_ request: T,  passingURLString: Bool = false, completion: @escaping ResultCallback<DataContainer<T.Response>>) {
 
         var endpoint: URL
-        if request.isAbsoluteURL()  {
-            endpoint = URL(string: request.resourceName)!
-        } else {
-           endpoint = self.endpoint(for: request)
-        }
+    
+        endpoint = self.endpoint(for: request)
+
 		
 		let task = session.dataTask(with: URLRequest(url: endpoint)) { data, response, error in
 			if let data = data {
