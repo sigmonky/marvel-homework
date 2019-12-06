@@ -6,7 +6,7 @@ None. I thought the project scope and timeline did not warrant inclusion of depe
 I did make extensive use of this API solution: 
 https://github.com/victorpimentel/MarvelAPI
 
-I did some modest refatoring on the above solution to flesh out the comicbook view model and vet its injection into a generic class proxying for the view controller. That is all embodied in the Marvel API playground included in this repo along with the homework project. 
+I did some modest refactoring on the above solution to flesh out the comicbook view model and vet its injection into a generic class proxying for the view controller. That is all embodied in the Marvel API playground included in this repo along with the homework project. 
 
 ## Project Scope:
 The homework app fetches a pre-defined comic book data set and displays thumbnail, title, description, and both cover and interior contributors. I referenced the comic book details view in the Marvel app but substantially reivsed the presentation of contributors. I avoided nesting a scrolling view inside a scrolling view. These are tricky to implement successfully. In the production app, I am unable to consistently scroll the embedded scrolling view on my XS Max and was never able to view the bottom few lines where the publishing date was listed. I also was not a fan of the wrapping of the contributor names. My design solution addresses these issues, but I do NOT claim to be a designer
