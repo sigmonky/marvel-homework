@@ -1,5 +1,5 @@
 # Note To Reviewers
-There were issues with the Playground. My apologies! I transferred the original playground to a separate folder that hosted the homework repo and some files failed to transfer. I resolved the issue, tested the playground and it appears to be working now. The project had no that I was able to detect. 
+There were issues with the Playground. My apologies! I transferred the original playground to a separate folder that hosted the homework repo and some files failed to transfer. I resolved the issue, tested the playground and it appears to be working now. The project had no compilation or runtime bugs that I was able to detect. 
 
 To test, I cloned the repo onto my local desktop and -- once I restored the api keys -- everything worked in both the playground and the project. Please document any other build or runtime errors you encounter and I will resolve them promptly.
 
