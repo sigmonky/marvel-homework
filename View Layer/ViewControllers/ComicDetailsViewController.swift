@@ -10,6 +10,7 @@ class ComicDetailsViewController: UIViewController {
     super.viewDidLoad()
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 600
+    tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     self.view.alpha = 0
   }
   
