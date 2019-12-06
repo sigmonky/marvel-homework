@@ -1,5 +1,11 @@
 # Marvel Homework -- Submitted by Randy Weinstein 12/3/19
 
+## Deployment Target: 
+iOS 12.0
+
+## XCode Version:
+11.2.1
+
 ## Dependencies used:
 None. I thought the project scope and timeline did not warrant inclusion of dependencies.
 
