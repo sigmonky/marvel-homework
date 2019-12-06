@@ -3,8 +3,8 @@ import Foundation
 public typealias ResultCallback<Value> = (Result<Value, Error>) -> ()
 
 struct MarvelAPI {
-    static let publicKey = "24dfba65b5783b7eca68f72e2aedc9f2"
-    static let privateKey = "01dfce1538b10cb534e958bf9b475812d0adc3f5"
+    static let publicKey = "your key here"
+    static let privateKey = "your key here"
     static let endPointURL = URL(string: "https://gateway.marvel.com:443/v1/public/")!
 }
 
